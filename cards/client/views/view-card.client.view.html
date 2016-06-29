@@ -1,0 +1,21 @@
+<section>
+  <div class="lead">
+    <h1>Lesson {{vm.card.lessonNumber}}.{{vm.card.cardNumber}} </h1>
+  </div>
+  <div class="pull-right" ng-show="vm.card.isCurrentUserOwner">
+    <a class="btn btn-primary" ui-sref="cards.edit({ cardId: vm.card._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <a class="btn btn-primary" ng-click="displayToggle=!displayToggle" >
+    <h1 class="page-header" ng-bind="vm.card.japaneseWord"></h1>
+  </a>
+  <div class="container">
+    <div class="slide-tile" ng-show="!displayToggle">
+      <h1 class="page-header" ng-bind="vm.card.englishWord"></h1>
+    </div>
+  </div>
+</section>
